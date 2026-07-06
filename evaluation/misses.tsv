@@ -1,0 +1,218 @@
+doc_id	method	dimension	missing
+llm-social-impact-fixture	pipeline-markitdown	nested_table_recall	index=13 rows=5 cols=7
+llm-social-impact-fixture	pipeline-mineru-pipeline	nested_table_recall	index=13 rows=5 cols=7
+llm-social-impact-fixture	pipeline-mineru-pipeline	nested_table_recall	index=13 rows=5 cols=7 text=Nestest1
+llm-social-impact-fixture	pipeline-mineru-pipeline	nested_table_recall	index=13 rows=5 cols=7 text=Nestest2
+llm-social-impact-fixture	pipeline-mineru-pipeline	nested_table_recall	index=13 rows=5 cols=7 text=Nestest3
+llm-social-impact-fixture	pipeline-mineru-pipeline	nested_table_recall	index=13 rows=5 cols=7 text=Nestest4
+llm-social-impact-fixture	pipeline-mineru-pipeline	nested_table_recall	index=13 rows=5 cols=7 text=Nestest5
+llm-social-impact-fixture	pipeline-mineru-pipeline	nested_table_recall	index=13 rows=5 cols=7 text=Nestest6
+llm-social-impact-fixture	pipeline-mineru-pipeline	nested_table_recall	index=13 rows=5 cols=7 text=Nestest7
+llm-social-impact-fixture	pipeline-mineru-pipeline	nested_table_recall	index=13 rows=5 cols=7 text=Nestest8
+llm-social-impact-fixture	pipeline-mineru-pipeline	nested_table_recall	index=13 rows=5 cols=7 text=Nestest9
+llm-social-impact-fixture	pipeline-mineru-pipeline	table_recall	index=12 rows=4 cols=4
+llm-social-impact-fixture	pipeline-mineru-vlm-engine	nested_table_recall	index=13 rows=5 cols=7
+llm-social-impact-fixture	pipeline-mineru-vlm-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest1
+llm-social-impact-fixture	pipeline-mineru-vlm-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest2
+llm-social-impact-fixture	pipeline-mineru-vlm-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest3
+llm-social-impact-fixture	pipeline-mineru-vlm-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest4
+llm-social-impact-fixture	pipeline-mineru-vlm-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest5
+llm-social-impact-fixture	pipeline-mineru-vlm-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest6
+llm-social-impact-fixture	pipeline-mineru-vlm-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest7
+llm-social-impact-fixture	pipeline-mineru-vlm-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest8
+llm-social-impact-fixture	pipeline-mineru-vlm-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest9
+llm-social-impact-fixture	pipeline-mineru-vlm-engine	table_recall	index=12 rows=4 cols=4
+llm-social-impact-fixture	pipeline-mineru-hybrid-engine	nested_table_recall	index=13 rows=5 cols=7
+llm-social-impact-fixture	pipeline-mineru-hybrid-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest1
+llm-social-impact-fixture	pipeline-mineru-hybrid-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest2
+llm-social-impact-fixture	pipeline-mineru-hybrid-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest3
+llm-social-impact-fixture	pipeline-mineru-hybrid-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest4
+llm-social-impact-fixture	pipeline-mineru-hybrid-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest5
+llm-social-impact-fixture	pipeline-mineru-hybrid-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest6
+llm-social-impact-fixture	pipeline-mineru-hybrid-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest7
+llm-social-impact-fixture	pipeline-mineru-hybrid-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest8
+llm-social-impact-fixture	pipeline-mineru-hybrid-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest9
+llm-social-impact-fixture	pipeline-mineru-hybrid-engine	table_recall	index=12 rows=4 cols=4
+llm-social-impact-fixture	pipeline-docling	nested_table_recall	index=13 rows=5 cols=7
+llm-social-impact-fixture	pipeline-pandoc	table_recall	index=12 rows=4 cols=4
+llm-social-impact-fixture	pipeline-pandoc	table_recall	index=8 rows=12 cols=6
+llm-social-impact-fixture	pipeline-pandoc	table_recall	index=9 rows=38 cols=6
+llm-social-impact-fixture	pipeline-ragflow	nested_table_recall	index=13 rows=5 cols=7
+llm-social-impact-fixture	pure-markitdown	chart_text_recall	I am a diagram
+llm-social-impact-fixture	pure-markitdown	chart_text_recall	类别1
+llm-social-impact-fixture	pure-markitdown	chart_text_recall	类别2
+llm-social-impact-fixture	pure-markitdown	chart_text_recall	类别3
+llm-social-impact-fixture	pure-markitdown	chart_text_recall	类别4
+llm-social-impact-fixture	pure-markitdown	chart_text_recall	系列 1
+llm-social-impact-fixture	pure-markitdown	chart_text_recall	系列 2
+llm-social-impact-fixture	pure-markitdown	chart_text_recall	系列 3
+llm-social-impact-fixture	pure-markitdown	embedded_object_recall	attachment_01 type=txt
+llm-social-impact-fixture	pure-markitdown	embedded_object_recall	attachment_02 type=csv
+llm-social-impact-fixture	pure-markitdown	embedded_object_recall	attachment_03 type=xlsx
+llm-social-impact-fixture	pure-markitdown	embedded_object_recall	attachment_04 type=pdf
+llm-social-impact-fixture	pure-markitdown	embedded_object_recall	attachment_05 type=docx
+llm-social-impact-fixture	pure-markitdown	nested_table_asset_recall	table=13 kind=smartart rel=rId36 text=drei
+llm-social-impact-fixture	pure-markitdown	nested_table_asset_recall	table=13 kind=smartart rel=rId36 text=vier
+llm-social-impact-fixture	pure-markitdown	nested_table_asset_recall	table=13 kind=smartart rel=rId36 text=zwei
+llm-social-impact-fixture	pure-markitdown	nested_table_recall	index=13 rows=5 cols=7
+llm-social-impact-fixture	pure-markitdown	smartart_text_recall	drei
+llm-social-impact-fixture	pure-markitdown	smartart_text_recall	four
+llm-social-impact-fixture	pure-markitdown	smartart_text_recall	three
+llm-social-impact-fixture	pure-markitdown	smartart_text_recall	vier
+llm-social-impact-fixture	pure-markitdown	smartart_text_recall	zwei
+llm-social-impact-fixture	pure-mineru-pipeline	chart_text_recall	I am a diagram
+llm-social-impact-fixture	pure-mineru-pipeline	chart_text_recall	类别1
+llm-social-impact-fixture	pure-mineru-pipeline	chart_text_recall	类别2
+llm-social-impact-fixture	pure-mineru-pipeline	chart_text_recall	类别3
+llm-social-impact-fixture	pure-mineru-pipeline	chart_text_recall	类别4
+llm-social-impact-fixture	pure-mineru-pipeline	embedded_object_recall	attachment_01 type=txt
+llm-social-impact-fixture	pure-mineru-pipeline	embedded_object_recall	attachment_02 type=csv
+llm-social-impact-fixture	pure-mineru-pipeline	embedded_object_recall	attachment_03 type=xlsx
+llm-social-impact-fixture	pure-mineru-pipeline	embedded_object_recall	attachment_04 type=pdf
+llm-social-impact-fixture	pure-mineru-pipeline	embedded_object_recall	attachment_05 type=docx
+llm-social-impact-fixture	pure-mineru-pipeline	nested_table_asset_recall	table=13 kind=smartart rel=rId36 text=drei
+llm-social-impact-fixture	pure-mineru-pipeline	nested_table_asset_recall	table=13 kind=smartart rel=rId36 text=vier
+llm-social-impact-fixture	pure-mineru-pipeline	nested_table_asset_recall	table=13 kind=smartart rel=rId36 text=zwei
+llm-social-impact-fixture	pure-mineru-pipeline	nested_table_recall	index=13 rows=5 cols=7
+llm-social-impact-fixture	pure-mineru-pipeline	nested_table_recall	index=13 rows=5 cols=7 text=Nestest1
+llm-social-impact-fixture	pure-mineru-pipeline	nested_table_recall	index=13 rows=5 cols=7 text=Nestest2
+llm-social-impact-fixture	pure-mineru-pipeline	nested_table_recall	index=13 rows=5 cols=7 text=Nestest3
+llm-social-impact-fixture	pure-mineru-pipeline	nested_table_recall	index=13 rows=5 cols=7 text=Nestest4
+llm-social-impact-fixture	pure-mineru-pipeline	nested_table_recall	index=13 rows=5 cols=7 text=Nestest5
+llm-social-impact-fixture	pure-mineru-pipeline	nested_table_recall	index=13 rows=5 cols=7 text=Nestest6
+llm-social-impact-fixture	pure-mineru-pipeline	nested_table_recall	index=13 rows=5 cols=7 text=Nestest7
+llm-social-impact-fixture	pure-mineru-pipeline	nested_table_recall	index=13 rows=5 cols=7 text=Nestest8
+llm-social-impact-fixture	pure-mineru-pipeline	nested_table_recall	index=13 rows=5 cols=7 text=Nestest9
+llm-social-impact-fixture	pure-mineru-pipeline	smartart_text_recall	drei
+llm-social-impact-fixture	pure-mineru-pipeline	smartart_text_recall	four
+llm-social-impact-fixture	pure-mineru-pipeline	smartart_text_recall	three
+llm-social-impact-fixture	pure-mineru-pipeline	smartart_text_recall	vier
+llm-social-impact-fixture	pure-mineru-pipeline	smartart_text_recall	zwei
+llm-social-impact-fixture	pure-mineru-pipeline	table_recall	index=12 rows=4 cols=4
+llm-social-impact-fixture	pure-mineru-vlm-engine	chart_text_recall	I am a diagram
+llm-social-impact-fixture	pure-mineru-vlm-engine	chart_text_recall	类别1
+llm-social-impact-fixture	pure-mineru-vlm-engine	chart_text_recall	类别2
+llm-social-impact-fixture	pure-mineru-vlm-engine	chart_text_recall	类别3
+llm-social-impact-fixture	pure-mineru-vlm-engine	chart_text_recall	类别4
+llm-social-impact-fixture	pure-mineru-vlm-engine	embedded_object_recall	attachment_01 type=txt
+llm-social-impact-fixture	pure-mineru-vlm-engine	embedded_object_recall	attachment_02 type=csv
+llm-social-impact-fixture	pure-mineru-vlm-engine	embedded_object_recall	attachment_03 type=xlsx
+llm-social-impact-fixture	pure-mineru-vlm-engine	embedded_object_recall	attachment_04 type=pdf
+llm-social-impact-fixture	pure-mineru-vlm-engine	embedded_object_recall	attachment_05 type=docx
+llm-social-impact-fixture	pure-mineru-vlm-engine	nested_table_asset_recall	table=13 kind=smartart rel=rId36 text=drei
+llm-social-impact-fixture	pure-mineru-vlm-engine	nested_table_asset_recall	table=13 kind=smartart rel=rId36 text=vier
+llm-social-impact-fixture	pure-mineru-vlm-engine	nested_table_asset_recall	table=13 kind=smartart rel=rId36 text=zwei
+llm-social-impact-fixture	pure-mineru-vlm-engine	nested_table_recall	index=13 rows=5 cols=7
+llm-social-impact-fixture	pure-mineru-vlm-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest1
+llm-social-impact-fixture	pure-mineru-vlm-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest2
+llm-social-impact-fixture	pure-mineru-vlm-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest3
+llm-social-impact-fixture	pure-mineru-vlm-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest4
+llm-social-impact-fixture	pure-mineru-vlm-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest5
+llm-social-impact-fixture	pure-mineru-vlm-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest6
+llm-social-impact-fixture	pure-mineru-vlm-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest7
+llm-social-impact-fixture	pure-mineru-vlm-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest8
+llm-social-impact-fixture	pure-mineru-vlm-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest9
+llm-social-impact-fixture	pure-mineru-vlm-engine	smartart_text_recall	drei
+llm-social-impact-fixture	pure-mineru-vlm-engine	smartart_text_recall	four
+llm-social-impact-fixture	pure-mineru-vlm-engine	smartart_text_recall	three
+llm-social-impact-fixture	pure-mineru-vlm-engine	smartart_text_recall	vier
+llm-social-impact-fixture	pure-mineru-vlm-engine	smartart_text_recall	zwei
+llm-social-impact-fixture	pure-mineru-vlm-engine	table_recall	index=12 rows=4 cols=4
+llm-social-impact-fixture	pure-mineru-hybrid-engine	chart_text_recall	I am a diagram
+llm-social-impact-fixture	pure-mineru-hybrid-engine	chart_text_recall	类别1
+llm-social-impact-fixture	pure-mineru-hybrid-engine	chart_text_recall	类别2
+llm-social-impact-fixture	pure-mineru-hybrid-engine	chart_text_recall	类别3
+llm-social-impact-fixture	pure-mineru-hybrid-engine	chart_text_recall	类别4
+llm-social-impact-fixture	pure-mineru-hybrid-engine	embedded_object_recall	attachment_01 type=txt
+llm-social-impact-fixture	pure-mineru-hybrid-engine	embedded_object_recall	attachment_02 type=csv
+llm-social-impact-fixture	pure-mineru-hybrid-engine	embedded_object_recall	attachment_03 type=xlsx
+llm-social-impact-fixture	pure-mineru-hybrid-engine	embedded_object_recall	attachment_04 type=pdf
+llm-social-impact-fixture	pure-mineru-hybrid-engine	embedded_object_recall	attachment_05 type=docx
+llm-social-impact-fixture	pure-mineru-hybrid-engine	nested_table_asset_recall	table=13 kind=smartart rel=rId36 text=drei
+llm-social-impact-fixture	pure-mineru-hybrid-engine	nested_table_asset_recall	table=13 kind=smartart rel=rId36 text=vier
+llm-social-impact-fixture	pure-mineru-hybrid-engine	nested_table_asset_recall	table=13 kind=smartart rel=rId36 text=zwei
+llm-social-impact-fixture	pure-mineru-hybrid-engine	nested_table_recall	index=13 rows=5 cols=7
+llm-social-impact-fixture	pure-mineru-hybrid-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest1
+llm-social-impact-fixture	pure-mineru-hybrid-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest2
+llm-social-impact-fixture	pure-mineru-hybrid-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest3
+llm-social-impact-fixture	pure-mineru-hybrid-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest4
+llm-social-impact-fixture	pure-mineru-hybrid-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest5
+llm-social-impact-fixture	pure-mineru-hybrid-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest6
+llm-social-impact-fixture	pure-mineru-hybrid-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest7
+llm-social-impact-fixture	pure-mineru-hybrid-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest8
+llm-social-impact-fixture	pure-mineru-hybrid-engine	nested_table_recall	index=13 rows=5 cols=7 text=Nestest9
+llm-social-impact-fixture	pure-mineru-hybrid-engine	smartart_text_recall	drei
+llm-social-impact-fixture	pure-mineru-hybrid-engine	smartart_text_recall	four
+llm-social-impact-fixture	pure-mineru-hybrid-engine	smartart_text_recall	three
+llm-social-impact-fixture	pure-mineru-hybrid-engine	smartart_text_recall	vier
+llm-social-impact-fixture	pure-mineru-hybrid-engine	smartart_text_recall	zwei
+llm-social-impact-fixture	pure-mineru-hybrid-engine	table_recall	index=12 rows=4 cols=4
+llm-social-impact-fixture	pure-docling	chart_text_recall	I am a diagram
+llm-social-impact-fixture	pure-docling	chart_text_recall	类别1
+llm-social-impact-fixture	pure-docling	chart_text_recall	类别2
+llm-social-impact-fixture	pure-docling	chart_text_recall	类别3
+llm-social-impact-fixture	pure-docling	chart_text_recall	类别4
+llm-social-impact-fixture	pure-docling	chart_text_recall	系列 1
+llm-social-impact-fixture	pure-docling	chart_text_recall	系列 2
+llm-social-impact-fixture	pure-docling	chart_text_recall	系列 3
+llm-social-impact-fixture	pure-docling	embedded_object_recall	attachment_01 type=txt
+llm-social-impact-fixture	pure-docling	embedded_object_recall	attachment_02 type=csv
+llm-social-impact-fixture	pure-docling	embedded_object_recall	attachment_03 type=xlsx
+llm-social-impact-fixture	pure-docling	embedded_object_recall	attachment_04 type=pdf
+llm-social-impact-fixture	pure-docling	embedded_object_recall	attachment_05 type=docx
+llm-social-impact-fixture	pure-docling	nested_table_asset_recall	table=13 kind=smartart rel=rId36 text=drei
+llm-social-impact-fixture	pure-docling	nested_table_asset_recall	table=13 kind=smartart rel=rId36 text=vier
+llm-social-impact-fixture	pure-docling	nested_table_asset_recall	table=13 kind=smartart rel=rId36 text=zwei
+llm-social-impact-fixture	pure-docling	nested_table_recall	index=13 rows=5 cols=7
+llm-social-impact-fixture	pure-docling	smartart_text_recall	drei
+llm-social-impact-fixture	pure-docling	smartart_text_recall	four
+llm-social-impact-fixture	pure-docling	smartart_text_recall	three
+llm-social-impact-fixture	pure-docling	smartart_text_recall	vier
+llm-social-impact-fixture	pure-docling	smartart_text_recall	zwei
+llm-social-impact-fixture	pure-pandoc	chart_text_recall	I am a diagram
+llm-social-impact-fixture	pure-pandoc	chart_text_recall	类别1
+llm-social-impact-fixture	pure-pandoc	chart_text_recall	类别2
+llm-social-impact-fixture	pure-pandoc	chart_text_recall	类别3
+llm-social-impact-fixture	pure-pandoc	chart_text_recall	类别4
+llm-social-impact-fixture	pure-pandoc	chart_text_recall	系列 1
+llm-social-impact-fixture	pure-pandoc	chart_text_recall	系列 2
+llm-social-impact-fixture	pure-pandoc	chart_text_recall	系列 3
+llm-social-impact-fixture	pure-pandoc	embedded_object_recall	attachment_01 type=txt
+llm-social-impact-fixture	pure-pandoc	embedded_object_recall	attachment_02 type=csv
+llm-social-impact-fixture	pure-pandoc	embedded_object_recall	attachment_03 type=xlsx
+llm-social-impact-fixture	pure-pandoc	embedded_object_recall	attachment_04 type=pdf
+llm-social-impact-fixture	pure-pandoc	embedded_object_recall	attachment_05 type=docx
+llm-social-impact-fixture	pure-pandoc	nested_table_asset_recall	table=13 kind=smartart rel=rId36 text=drei
+llm-social-impact-fixture	pure-pandoc	nested_table_asset_recall	table=13 kind=smartart rel=rId36 text=vier
+llm-social-impact-fixture	pure-pandoc	nested_table_asset_recall	table=13 kind=smartart rel=rId36 text=zwei
+llm-social-impact-fixture	pure-pandoc	smartart_text_recall	drei
+llm-social-impact-fixture	pure-pandoc	smartart_text_recall	four
+llm-social-impact-fixture	pure-pandoc	smartart_text_recall	three
+llm-social-impact-fixture	pure-pandoc	smartart_text_recall	vier
+llm-social-impact-fixture	pure-pandoc	smartart_text_recall	zwei
+llm-social-impact-fixture	pure-pandoc	table_recall	index=12 rows=4 cols=4
+llm-social-impact-fixture	pure-pandoc	table_recall	index=8 rows=12 cols=6
+llm-social-impact-fixture	pure-pandoc	table_recall	index=9 rows=38 cols=6
+llm-social-impact-fixture	pure-ragflow	chart_text_recall	I am a diagram
+llm-social-impact-fixture	pure-ragflow	chart_text_recall	类别1
+llm-social-impact-fixture	pure-ragflow	chart_text_recall	类别2
+llm-social-impact-fixture	pure-ragflow	chart_text_recall	类别3
+llm-social-impact-fixture	pure-ragflow	chart_text_recall	类别4
+llm-social-impact-fixture	pure-ragflow	chart_text_recall	系列 1
+llm-social-impact-fixture	pure-ragflow	chart_text_recall	系列 2
+llm-social-impact-fixture	pure-ragflow	chart_text_recall	系列 3
+llm-social-impact-fixture	pure-ragflow	embedded_object_recall	attachment_01 type=txt
+llm-social-impact-fixture	pure-ragflow	embedded_object_recall	attachment_02 type=csv
+llm-social-impact-fixture	pure-ragflow	embedded_object_recall	attachment_03 type=xlsx
+llm-social-impact-fixture	pure-ragflow	embedded_object_recall	attachment_04 type=pdf
+llm-social-impact-fixture	pure-ragflow	embedded_object_recall	attachment_05 type=docx
+llm-social-impact-fixture	pure-ragflow	image_recall	image_10 image15.png
+llm-social-impact-fixture	pure-ragflow	nested_table_asset_recall	table=13 kind=smartart rel=rId36 text=drei
+llm-social-impact-fixture	pure-ragflow	nested_table_asset_recall	table=13 kind=smartart rel=rId36 text=vier
+llm-social-impact-fixture	pure-ragflow	nested_table_asset_recall	table=13 kind=smartart rel=rId36 text=zwei
+llm-social-impact-fixture	pure-ragflow	nested_table_recall	index=13 rows=5 cols=7
+llm-social-impact-fixture	pure-ragflow	smartart_text_recall	drei
+llm-social-impact-fixture	pure-ragflow	smartart_text_recall	four
+llm-social-impact-fixture	pure-ragflow	smartart_text_recall	three
+llm-social-impact-fixture	pure-ragflow	smartart_text_recall	vier
+llm-social-impact-fixture	pure-ragflow	smartart_text_recall	zwei

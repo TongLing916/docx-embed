@@ -1,0 +1,15 @@
+doc_id	method	embedded_object_recall	image_recall	table_recall	nested_table_recall	nested_table_asset_recall	heading_recall	heading_tree_score	key_text_hit	checkbox_recall	chart_text_recall	smartart_text_recall	footnote_recall	footnote_anchor_accuracy	hyperlink_recall	toc_recall	textbox_recall	numbering_recall	table_numbering_recall	formula_recall	table_cell_match	asset_anchor_accuracy	embedded_content_hit	markdown_portability	doc_score
+llm-social-impact-fixture	pipeline-markitdown	1.0000	1.0000	1.0000	0.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.9091
+llm-social-impact-fixture	pipeline-mineru-pipeline	1.0000	1.0000	0.9231	0.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.9021
+llm-social-impact-fixture	pipeline-mineru-vlm-engine	1.0000	1.0000	0.9231	0.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.9021
+llm-social-impact-fixture	pipeline-mineru-hybrid-engine	1.0000	1.0000	0.9231	0.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.9021
+llm-social-impact-fixture	pipeline-docling	1.0000	1.0000	1.0000	0.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.9091
+llm-social-impact-fixture	pipeline-pandoc	1.0000	1.0000	0.7692	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.9790
+llm-social-impact-fixture	pipeline-ragflow	1.0000	1.0000	1.0000	0.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.9091
+llm-social-impact-fixture	pure-markitdown	0.0000	1.0000	1.0000	0.0000	0.5000	1.0000	1.0000	1.0000	1.0000	0.0000	0.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.5909
+llm-social-impact-fixture	pure-mineru-pipeline	0.0000	1.0000	0.9231	0.0000	0.5000	1.0000	1.0000	1.0000	1.0000	0.3750	0.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.6180
+llm-social-impact-fixture	pure-mineru-vlm-engine	0.0000	1.0000	0.9231	0.0000	0.5000	1.0000	1.0000	1.0000	1.0000	0.3750	0.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.6180
+llm-social-impact-fixture	pure-mineru-hybrid-engine	0.0000	1.0000	0.9231	0.0000	0.5000	1.0000	1.0000	1.0000	1.0000	0.3750	0.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.6180
+llm-social-impact-fixture	pure-docling	0.0000	1.0000	1.0000	0.0000	0.5000	1.0000	1.0000	1.0000	1.0000	0.0000	0.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.5909
+llm-social-impact-fixture	pure-pandoc	0.0000	1.0000	0.7692	1.0000	0.5000	1.0000	1.0000	1.0000	1.0000	0.0000	0.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.6608
+llm-social-impact-fixture	pure-ragflow	0.0000	0.9000	1.0000	0.0000	0.5000	1.0000	1.0000	1.0000	1.0000	0.0000	0.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.5818

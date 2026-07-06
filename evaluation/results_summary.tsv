@@ -1,0 +1,15 @@
+method	n_docs	embedded_object_recall	image_recall	table_recall	nested_table_recall	nested_table_asset_recall	heading_recall	heading_tree_score	key_text_hit	checkbox_recall	chart_text_recall	smartart_text_recall	footnote_recall	footnote_anchor_accuracy	hyperlink_recall	toc_recall	textbox_recall	numbering_recall	table_numbering_recall	formula_recall	table_cell_match	asset_anchor_accuracy	embedded_content_hit	markdown_portability	doc_score
+pipeline-markitdown	1	1.0000	1.0000	1.0000	0.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.9091
+pipeline-mineru-pipeline	1	1.0000	1.0000	0.9231	0.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.9021
+pipeline-mineru-vlm-engine	1	1.0000	1.0000	0.9231	0.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.9021
+pipeline-mineru-hybrid-engine	1	1.0000	1.0000	0.9231	0.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.9021
+pipeline-docling	1	1.0000	1.0000	1.0000	0.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.9091
+pipeline-pandoc	1	1.0000	1.0000	0.7692	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.9790
+pipeline-ragflow	1	1.0000	1.0000	1.0000	0.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	1.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.9091
+pure-markitdown	1	0.0000	1.0000	1.0000	0.0000	0.5000	1.0000	1.0000	1.0000	1.0000	0.0000	0.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.5909
+pure-mineru-pipeline	1	0.0000	1.0000	0.9231	0.0000	0.5000	1.0000	1.0000	1.0000	1.0000	0.3750	0.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.6180
+pure-mineru-vlm-engine	1	0.0000	1.0000	0.9231	0.0000	0.5000	1.0000	1.0000	1.0000	1.0000	0.3750	0.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.6180
+pure-mineru-hybrid-engine	1	0.0000	1.0000	0.9231	0.0000	0.5000	1.0000	1.0000	1.0000	1.0000	0.3750	0.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.6180
+pure-docling	1	0.0000	1.0000	1.0000	0.0000	0.5000	1.0000	1.0000	1.0000	1.0000	0.0000	0.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.5909
+pure-pandoc	1	0.0000	1.0000	0.7692	1.0000	0.5000	1.0000	1.0000	1.0000	1.0000	0.0000	0.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.6608
+pure-ragflow	1	0.0000	0.9000	1.0000	0.0000	0.5000	1.0000	1.0000	1.0000	1.0000	0.0000	0.0000	-	-	-	-	-	-	-	-	-	-	-	-	0.5818

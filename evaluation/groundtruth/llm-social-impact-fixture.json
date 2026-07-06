@@ -1,0 +1,479 @@
+{
+  "doc_id": "llm-social-impact-fixture",
+  "source_file": "llm-social-impact-fixture.docx",
+  "expected": {
+    "embedded_objects": [
+      {
+        "ref": "attachment_01",
+        "source_path": "word/embeddings/oleObject1.bin",
+        "type": "txt",
+        "sheets": null
+      },
+      {
+        "ref": "attachment_02",
+        "source_path": "word/embeddings/oleObject2.bin",
+        "type": "csv",
+        "sheets": null
+      },
+      {
+        "ref": "attachment_03",
+        "source_path": "word/embeddings/oleObject3.bin",
+        "type": "xlsx",
+        "sheets": 3
+      },
+      {
+        "ref": "attachment_04",
+        "source_path": "word/embeddings/oleObject4.bin",
+        "type": "pdf",
+        "sheets": null
+      },
+      {
+        "ref": "attachment_05",
+        "source_path": "word/embeddings/oleObject5.bin",
+        "type": "docx",
+        "sheets": null
+      }
+    ],
+    "images": [
+      {
+        "ref": "image_01",
+        "filename": "image1.png",
+        "source_path": "word/media/image1.png"
+      },
+      {
+        "ref": "image_02",
+        "filename": "image2.png",
+        "source_path": "word/media/image2.png"
+      },
+      {
+        "ref": "image_03",
+        "filename": "image3.png",
+        "source_path": "word/media/image3.png"
+      },
+      {
+        "ref": "image_04",
+        "filename": "image9.png",
+        "source_path": "word/media/image9.png"
+      },
+      {
+        "ref": "image_05",
+        "filename": "image10.png",
+        "source_path": "word/media/image10.png"
+      },
+      {
+        "ref": "image_06",
+        "filename": "image11.png",
+        "source_path": "word/media/image11.png"
+      },
+      {
+        "ref": "image_07",
+        "filename": "image12.png",
+        "source_path": "word/media/image12.png"
+      },
+      {
+        "ref": "image_08",
+        "filename": "image13.png",
+        "source_path": "word/media/image13.png"
+      },
+      {
+        "ref": "image_09",
+        "filename": "image14.png",
+        "source_path": "word/media/image14.png"
+      },
+      {
+        "ref": "image_10",
+        "filename": "image15.png",
+        "source_path": "word/media/image15.png"
+      }
+    ],
+    "tables": [
+      {
+        "index": 0,
+        "rows": 1,
+        "cols": 2
+      },
+      {
+        "index": 1,
+        "rows": 4,
+        "cols": 3
+      },
+      {
+        "index": 2,
+        "rows": 1,
+        "cols": 2
+      },
+      {
+        "index": 3,
+        "rows": 42,
+        "cols": 4
+      },
+      {
+        "index": 4,
+        "rows": 37,
+        "cols": 3
+      },
+      {
+        "index": 5,
+        "rows": 68,
+        "cols": 3
+      },
+      {
+        "index": 6,
+        "rows": 3,
+        "cols": 3
+      },
+      {
+        "index": 7,
+        "rows": 4,
+        "cols": 4
+      },
+      {
+        "index": 8,
+        "rows": 12,
+        "cols": 6
+      },
+      {
+        "index": 9,
+        "rows": 38,
+        "cols": 6
+      },
+      {
+        "index": 10,
+        "rows": 1,
+        "cols": 2
+      },
+      {
+        "index": 11,
+        "rows": 4,
+        "cols": 4
+      },
+      {
+        "index": 12,
+        "rows": 4,
+        "cols": 4
+      }
+    ],
+    "nested_tables": [
+      {
+        "index": 13,
+        "rows": 5,
+        "cols": 7,
+        "depth": 1,
+        "texts": [
+          "Nestest1",
+          "Nestest2",
+          "Nestest3",
+          "阈值",
+          "Nestest4",
+          "Nestest7",
+          "< 0.08",
+          "Nestest5",
+          "Nestest8",
+          "> 0.75",
+          "Nestest6",
+          "Nestest9",
+          "> 0"
+        ]
+      }
+    ],
+    "checkboxes": [
+      {
+        "text": "□ 常规  ■ 加急"
+      },
+      {
+        "text": "□ 低  ■ 中  □ 高"
+      },
+      {
+        "text": "■ 必需  □ 抽查"
+      },
+      {
+        "text": "□ 可完全自动决策    ■ 必须人工确认    ■ 必须提供申诉渠道    □ 可省略审计"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 常规  ■ 加急"
+      },
+      {
+        "text": "□ 低  ■ 中  □ 高"
+      },
+      {
+        "text": "■ 必需  □ 抽查"
+      },
+      {
+        "text": "□ 可完全自动决策    ■ 必须人工确认    ■ 必须提供申诉渠道    □ 可省略审计"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  ☑ 需修订"
+      },
+      {
+        "text": "☑ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "☑ 通过  ☑ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  ☑ 需修订"
+      },
+      {
+        "text": "☑ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      },
+      {
+        "text": "□ 通过  □ 需修订"
+      }
+    ],
+    "charts": [
+      {
+        "index": 0,
+        "source_path": "word/charts/chart1.xml",
+        "title": "I am a diagram",
+        "series": [
+          "系列 1",
+          "系列 2",
+          "系列 3"
+        ],
+        "categories": [
+          "类别1",
+          "类别2",
+          "类别3",
+          "类别4"
+        ],
+        "texts": [
+          "I am a diagram",
+          "系列 1",
+          "系列 2",
+          "系列 3",
+          "类别1",
+          "类别2",
+          "类别3",
+          "类别4"
+        ]
+      }
+    ],
+    "smartarts": [
+      {
+        "index": 0,
+        "source_path": "word/diagrams/data1.xml",
+        "texts": [
+          "one",
+          "two",
+          "three",
+          "four"
+        ]
+      },
+      {
+        "index": 1,
+        "source_path": "word/diagrams/data2.xml",
+        "texts": [
+          "eins",
+          "zwei",
+          "drei",
+          "vier"
+        ]
+      }
+    ],
+    "nested_table_assets": [
+      {
+        "table_index": 13,
+        "kind": "image",
+        "rel_id": "rId35",
+        "texts": []
+      },
+      {
+        "table_index": 13,
+        "kind": "smartart",
+        "rel_id": "rId36",
+        "texts": [
+          "eins",
+          "zwei",
+          "drei",
+          "vier"
+        ]
+      }
+    ],
+    "headings": [
+      {
+        "level": 1,
+        "text": "Table of Contents"
+      },
+      {
+        "level": 1,
+        "text": "1. English Section: Social Systems Under LLM Adoption"
+      },
+      {
+        "level": 2,
+        "text": "1.1 Education and Access"
+      },
+      {
+        "level": 3,
+        "text": "1.1.1 Non-spanning Formula"
+      },
+      {
+        "level": 2,
+        "text": "1.2 Non-spanning Table"
+      },
+      {
+        "level": 2,
+        "text": "1.3 Cross-page Formula Block"
+      },
+      {
+        "level": 2,
+        "text": "1.4 Embedded Objects"
+      },
+      {
+        "level": 1,
+        "text": "2. 中文部分：大语言模型对社会治理与劳动的影响"
+      },
+      {
+        "level": 2,
+        "text": "2.1 多级编号：治理实施路径"
+      },
+      {
+        "level": 2,
+        "text": "2.2 单行复杂信息图"
+      },
+      {
+        "level": 2,
+        "text": "2.3 单行多个复杂信息图"
+      },
+      {
+        "level": 2,
+        "text": "2.4 跨页表格：社会影响指标"
+      },
+      {
+        "level": 2,
+        "text": "2.5 双列表格：同一行并列两份"
+      },
+      {
+        "level": 2,
+        "text": "2.6 跨页双列表格"
+      },
+      {
+        "level": 2,
+        "text": "2.7 表格内嵌图片与公式"
+      },
+      {
+        "level": 2,
+        "text": "2.8 非标准格式申请单（不跨页）"
+      },
+      {
+        "level": 2,
+        "text": "2.9 非标准格式申请单（跨页）"
+      },
+      {
+        "level": 1,
+        "text": "3. Deutscher Teil: Gesellschaftliche Folgen von LLMs"
+      },
+      {
+        "level": 2,
+        "text": "3.1 Vertrauen, Transparenz und Verantwortung"
+      },
+      {
+        "level": 2,
+        "text": "3.2 Single-line Complex Flowchart"
+      },
+      {
+        "level": 2,
+        "text": "3.3 Single-line Multiple Complex Flowcharts"
+      },
+      {
+        "level": 2,
+        "text": "3.4 Abschließende Matrix"
+      }
+    ],
+    "key_texts": [
+      "Large language models are becoming a civic technology layer",
+      "Impact_29 = α29·Access + β29·Quality - γ29·Bias + δ29·HumanReview - λ29·DeploymentRisk",
+      "大语言模型正在改变知识生产、公共服务、企业流程和个人表达方式",
+      "跨页表格：社会影响指标",
+      "LLMs verändern Wissensarbeit, öffentliche Kommunikation und betriebliche Entscheidungen",
+      "Embedded TXT object anchor",
+      "表格内嵌图片与公式",
+      "非标准申请单：LLM 教育试点快速审批",
+      "跨页非标准申请单：LLM 高影响场景上线审批"
+    ]
+  },
+  "auto_warnings": []
+}

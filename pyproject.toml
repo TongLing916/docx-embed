@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "docx-embed"
+version = "0.1.0"
+description = "Extract, parse, and reattach embedded assets (attachments, images, packages) from DOCX files."
+license = { text = "MIT" }
+authors = [
+    { name = "Tong Ling", email = "ling_tong@outlook.com" },
+]
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+keywords = ["docx", "ooxml", "embedded", "attachment", "markdown", "rag", "document-parsing"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Topic :: Text Processing :: Markup :: Markdown",
+    "Topic :: Office/Business :: Office Suites",
+    "Intended Audience :: Developers",
+]
+dependencies = [
+    "markitdown[docx]>=0.1.6",
+    "markdownify>=0.13",
+    "mammoth>=1.9",
+    "olefile>=0.47",
+    "openpyxl>=3.1",
+    "python-docx>=1.1",
+    "pillow>=12.3.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/lingtong/docx-embed"
+Repository = "https://github.com/lingtong/docx-embed"
+Issues = "https://github.com/lingtong/docx-embed/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["edp*", "evaluation*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

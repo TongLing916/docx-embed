@@ -1,0 +1,23 @@
+.DS_Store
+.venv/
+.pytest_cache/
+__pycache__/
+*.pyc
+*.egg-info/
+reports/
+sources/parsed
+.~*
+.cursor
+.pytest_cache/
+output/
+__meta__/
+output_batch/
+
+# Environment / secrets
+.env
+.env.*
+
+# Packaging build artifacts
+dist/
+build/
+.eggs/
