@@ -902,6 +902,8 @@ def _detect_mime(filename: str, payload: bytes, content_type: str | None) -> str
         return "application/zip"
 
     guessed = mimetypes.guess_type(filename)[0]
+    if guessed == "text/xml" and PurePosixPath(filename).suffix.lower() == ".xml":
+        return "application/xml"
     if guessed:
         return guessed
     return content_type or "application/octet-stream"

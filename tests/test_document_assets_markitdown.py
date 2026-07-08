@@ -9,12 +9,19 @@ from zipfile import ZIP_DEFLATED, ZipFile
 
 from conftest import OFFICE_NS, PKG_REL_NS, REL_NS, WORD_NS, make_xlsx_bytes
 from edp import extract_document_assets, merge_parent_with_attachments, parse_attachment_package
+from edp.extractor import _detect_mime
 from edp.merger import _replace_asset_sentinels
 
 
 DRAWING_NS = "http://schemas.openxmlformats.org/drawingml/2006/main"
 CHART_NS = "http://schemas.openxmlformats.org/drawingml/2006/chart"
 DIAGRAM_NS = "http://schemas.openxmlformats.org/drawingml/2006/diagram"
+
+
+def test_xml_detected_mime_is_stable_when_platform_guesses_text_xml(monkeypatch) -> None:
+    monkeypatch.setattr("edp.extractor.mimetypes.guess_type", lambda filename: ("text/xml", None))
+
+    assert _detect_mime("chart1.xml", b"<c:chart/>", "application/xml") == "application/xml"
 
 
 def test_docx_image_is_extracted_and_reinserted_from_markitdown(
