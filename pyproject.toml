@@ -37,13 +37,16 @@ Homepage = "https://github.com/lingtong/docx-embed"
 Repository = "https://github.com/lingtong/docx-embed"
 Issues = "https://github.com/lingtong/docx-embed/issues"
 
+[project.scripts]
+edp = "edp.cli:main"
+
 [project.optional-dependencies]
 dev = [
     "pytest>=8.0",
 ]
 
 [tool.setuptools.packages.find]
-include = ["edp*", "evaluation*"]
+include = ["edp*", "evaluation*", "examples*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

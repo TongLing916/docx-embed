@@ -39,37 +39,35 @@ Embedded attachments are the isolated, decisive gap EDP closes. Newer dimensions
 
 ## Quick start
 
+EDP targets Windows, macOS, and Linux on Python 3.12. The core library and
+`markitdown` / `ragflow` local parser paths are pure Python. Optional parser
+backends keep their own platform requirements: `pandoc` must be installed on
+`PATH`, and MinerU / Docling require reachable HTTP services.
+
 Before running, check that inputs are modern `.docx` files. Legacy `.doc` files are not supported directly; convert them to `.docx` first. Avoid writing output back into the source document folder, and skip Office lock files such as `~$report.docx`.
 
 ```bash
 # Convert one DOCX file with the default pipeline
-uv run examples/run_pipeline.py input.docx output_package
+uv run edp pipeline input.docx output_package
 
 # Switch the main parser
-uv run examples/run_pipeline.py input.docx output_package --main-parser pandoc
+uv run edp pipeline input.docx output_package --main-parser pandoc
 
 # Allow EDP to unwrap Ole10Native .bin shells into the real payload
-uv run examples/run_pipeline.py input.docx output_package --unsafe-unwrap-embedded
+uv run edp pipeline input.docx output_package --unsafe-unwrap-embedded
 
 # Pure-parser control: no attachment extraction, no manifest — for comparison only
-uv run examples/run_parser.py pandoc input.docx output_pandoc
+uv run edp parser pandoc input.docx output_pandoc
 ```
 
 Convert every `.docx` file under a folder, including nested directories, while preserving the relative output layout:
 
 ```bash
-SRC_DIR="input_docs"
-OUT_DIR="output/packages"
-
-find "$SRC_DIR" -type f -iname "*.docx" ! -name "~$*" -print0 |
-while IFS= read -r -d "" docx; do
-  rel="${docx#$SRC_DIR/}"
-  out="$OUT_DIR/${rel%.docx}"
-  mkdir -p "$(dirname "$out")"
-  echo "Converting: $docx -> $out"
-  uv run examples/run_pipeline.py "$docx" "$out" --main-parser markitdown --unsafe-unwrap-embedded
-done
+uv run edp batch input_docs output/packages --main-parser markitdown --unsafe-unwrap-embedded
 ```
+
+The older `examples/run_pipeline.py` and `examples/run_parser.py` entrypoints
+remain available for compatibility.
 
 Use `--unsafe-unwrap-embedded` only when you want Ole10Native `.bin` wrappers unpacked into their real payloads. For public datasets, review generated `manifest.json` files before publishing.
 

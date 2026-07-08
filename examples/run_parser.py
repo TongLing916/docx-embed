@@ -16,6 +16,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from edp import DocumentPackage, build_manifest, parse_main_document
+from edp.path_utils import is_external_or_absolute_path
 
 
 MINERU_PARSERS = {"mineru", "mineru-pipeline", "mineru-vlm-engine", "mineru-hybrid-engine"}
@@ -182,7 +183,7 @@ def _materialize_parser_assets(
     assets_dir = structured_dir / "assets" / "images" / parser_name
 
     def rewrite_asset_path(raw_path: str) -> str:
-        if _is_external_or_absolute_path(raw_path):
+        if is_external_or_absolute_path(raw_path):
             return raw_path
         source = (markdown_dir / raw_path).resolve()
         if not source.exists() or not source.is_file():
@@ -201,14 +202,6 @@ def _materialize_parser_assets(
         r'(<img\b[^>]*\bsrc=")([^"]+)(")',
         lambda match: f"{match.group(1)}{rewrite_asset_path(match.group(2))}{match.group(3)}",
         markdown,
-    )
-
-
-def _is_external_or_absolute_path(path: str) -> bool:
-    lowered = path.lower()
-    return (
-        lowered.startswith(("http://", "https://", "data:", "mailto:"))
-        or path.startswith(("/", "#"))
     )
 
 

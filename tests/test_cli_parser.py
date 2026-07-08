@@ -145,6 +145,42 @@ def test_pure_mineru_mode_copies_zip_images_and_rewrites_links(
     assert (tmp_path / "package" / "structured" / "assets" / "images" / "mineru" / "images" / "page_2.jpg").read_bytes() == b"jpg"
 
 
+def test_pure_parser_keeps_windows_absolute_image_links(tmp_path: Path, monkeypatch) -> None:
+    docx = make_docx_with_embeddings(tmp_path / "pure-windows-paths.docx", [])
+
+    def fake_parse(input_path: Path, parser_name: str, artifact_dir: Path):
+        assert input_path == docx
+        image_dir = artifact_dir / "images"
+        image_dir.mkdir(parents=True)
+        markdown = (
+            "# Windows paths\n\n"
+            "![drive](C:/tmp/image.png)\n\n"
+            "![backslash](C:\\tmp\\image.png)\n\n"
+            "![unc](\\\\server\\share\\image.png)\n\n"
+            "![relative](images/doc_001.png)\n"
+        )
+        markdown_path = artifact_dir / "pure.md"
+        markdown_path.write_text(markdown, encoding="utf-8")
+        (image_dir / "doc_001.png").write_bytes(b"png")
+        return SimpleNamespace(
+            parser=parser_name,
+            markdown=markdown,
+            artifacts={"clean_markdown": markdown_path},
+            warnings=[],
+        )
+
+    monkeypatch.setattr("examples.run_parser.parse_main_document", fake_parse, raising=False)
+
+    exit_code = run_parser(docx, tmp_path / "package", "markitdown")
+
+    assert exit_code == 0
+    content = (tmp_path / "package" / "structured" / "content.md").read_text(encoding="utf-8")
+    assert "![drive](C:/tmp/image.png)" in content
+    assert "![backslash](C:\\tmp\\image.png)" in content
+    assert "![unc](\\\\server\\share\\image.png)" in content
+    assert "![relative](assets/images/markitdown/images/doc_001.png)" in content
+
+
 def test_pure_mineru_backend_variant_copies_zip_images_under_variant_name(
     tmp_path: Path, monkeypatch
 ) -> None:

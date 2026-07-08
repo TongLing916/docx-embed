@@ -399,8 +399,8 @@ def _mineru_zip_result(
     zip_dir.mkdir(parents=True)
     try:
         with zipfile.ZipFile(zip_path) as archive:
-            archive.extractall(zip_dir)
-    except (zipfile.BadZipFile, OSError) as exc:
+            _extract_zip_safely(archive, zip_dir)
+    except (ValueError, zipfile.BadZipFile, OSError) as exc:
         return MainParseResult(
             parser=parser_label,
             markdown="",
@@ -662,6 +662,16 @@ def _safe_zip_member_path(root: Path, member_name: str) -> Path:
     if target != root_resolved and root_resolved not in target.parents:
         raise ValueError(f"unsafe zip member path: {member_name}")
     return target
+
+
+def _extract_zip_safely(archive: zipfile.ZipFile, root: Path) -> None:
+    for member in archive.infolist():
+        if member.is_dir():
+            continue
+        target = _safe_zip_member_path(root, member.filename)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        with archive.open(member) as source, target.open("wb") as destination:
+            shutil.copyfileobj(source, destination)
 
 
 def _extract_mineru_result(data: dict[str, Any], stem: str) -> dict[str, Any]:

@@ -39,37 +39,33 @@ EDP 只补这一块短板。它是一个**资源层**，不是又一个解析器
 
 ## 快速开始
 
+EDP 目标支持 Windows、macOS、Linux，运行时为 Python 3.12。核心库以及
+`markitdown` / `ragflow` 本地解析路径都是纯 Python。可选解析后端保留各自的平台要求：
+`pandoc` 需要系统 `PATH` 上有可执行文件，MinerU / Docling 需要可访问的 HTTP 服务。
+
 运行前先确认输入是新版 `.docx` 文件。本项目不直接支持旧版 `.doc`，请先另存或转换为 `.docx`。输出目录不要直接写回源文档目录，并跳过 `~$report.docx` 这类 Office 临时锁文件。
 
 ```bash
 # 转换单个 DOCX 文件，使用默认管线
-uv run examples/run_pipeline.py input.docx output_package
+uv run edp pipeline input.docx output_package
 
 # 切换主解析器
-uv run examples/run_pipeline.py input.docx output_package --main-parser pandoc
+uv run edp pipeline input.docx output_package --main-parser pandoc
 
 # 允许 EDP 把 Ole10Native .bin 外壳拆成真实载荷
-uv run examples/run_pipeline.py input.docx output_package --unsafe-unwrap-embedded
+uv run edp pipeline input.docx output_package --unsafe-unwrap-embedded
 
 # 纯 parser 对照：不做附件提取、不生成 manifest，仅用于对比
-uv run examples/run_parser.py pandoc input.docx output_pandoc
+uv run edp parser pandoc input.docx output_pandoc
 ```
 
 递归转换某个目录下的全部 `.docx` 文件（包含嵌套目录），并在输出目录中保留相对路径：
 
 ```bash
-SRC_DIR="input_docs"
-OUT_DIR="output/packages"
-
-find "$SRC_DIR" -type f -iname "*.docx" ! -name "~$*" -print0 |
-while IFS= read -r -d "" docx; do
-  rel="${docx#$SRC_DIR/}"
-  out="$OUT_DIR/${rel%.docx}"
-  mkdir -p "$(dirname "$out")"
-  echo "Converting: $docx -> $out"
-  uv run examples/run_pipeline.py "$docx" "$out" --main-parser markitdown --unsafe-unwrap-embedded
-done
+uv run edp batch input_docs output/packages --main-parser markitdown --unsafe-unwrap-embedded
 ```
+
+旧的 `examples/run_pipeline.py` 与 `examples/run_parser.py` 入口仍保留，作为兼容用法。
 
 只有在你希望把 Ole10Native `.bin` 外壳拆成真实载荷时，才使用 `--unsafe-unwrap-embedded`。如果要公开数据集，发布前请人工检查生成的 `manifest.json`。
 

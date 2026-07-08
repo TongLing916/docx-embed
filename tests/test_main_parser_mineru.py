@@ -66,6 +66,41 @@ def test_mineru_parser_accepts_zip_response_and_writes_artifacts(
     assert result.artifacts["clean_markdown"] == tmp_path / "artifacts" / "zip" / "result.md"
 
 
+def test_mineru_parser_rejects_unsafe_zip_member_paths(
+    tmp_path: Path, monkeypatch
+) -> None:
+    source = tmp_path / "source.docx"
+    source.write_bytes(b"docx")
+
+    zip_stream = BytesIO()
+    with ZipFile(zip_stream, "w", ZIP_DEFLATED) as archive:
+        archive.writestr("../escape.md", "# Escape\n")
+    payload = zip_stream.getvalue()
+
+    class FakeResponse:
+        headers = {"Content-Type": "application/zip"}
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, exc_type, exc, tb):
+            return False
+
+        def read(self) -> bytes:
+            return payload
+
+    monkeypatch.setenv("MINERU_API_KEY", "mineru-token")
+    monkeypatch.setattr("edp.main_parser.request.urlopen", lambda *_args, **_kwargs: FakeResponse())
+
+    result = parse_main_document(source, "mineru-pipeline", tmp_path / "artifacts")
+
+    assert result.markdown == ""
+    assert result.warnings == [
+        "MinerU zip response could not be unpacked: unsafe zip member path: ../escape.md"
+    ]
+    assert not (tmp_path / "escape.md").exists()
+
+
 def test_mineru_vlm_engine_parser_sends_vlm_backend(
     tmp_path: Path, monkeypatch
 ) -> None:
