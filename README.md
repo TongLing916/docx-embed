@@ -179,6 +179,7 @@ Full decision matrix and per-framework trade-offs: [INSIGHTS.md](INSIGHTS.md).
 - **[docs/xlsx-parsing-guide.md](docs/xlsx-parsing-guide.md)** — XLSX parsing guide (strategy, output structure, asset extraction, real-world examples). [中文版](docs/xlsx-parsing-guide.zh-CN.md)
 - **[docs/examples/converted-markdown/](docs/examples/converted-markdown/)** — curated converted Markdown files for direct reading on GitHub.
 - **Per-framework research notes** (Chinese): [RAGFlow](docs/ragflow-docx-parsing-research.md) · [Dify](docs/dify-docx-parsing-research.md) · [WeKnora](docs/weknora-docx-parsing-research.md) · [MinerU backend](docs/mineru-backend-evaluation.md) · [evaluation report](docs/docx-markdown-evaluation-report.md)
+- **[Docling XLSX merged-cells performance deep-dive](docs/docling-xlsx-merged-cells-performance.md)** — source-level analysis of why Docling degrades from seconds to ~40 min on merge-heavy xlsx (O(cells × merged_ranges) linear scan in `has_content`).
 
 ---
 
