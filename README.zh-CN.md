@@ -1,6 +1,6 @@
 # Embedded Document Parser (EDP)
 
-一个预处理增强层：在主解析器运行**之前**从 DOCX 中回收嵌入的 OLE 附件（XLSX / PDF / DOCX / PPT），再把它们以行内链接的形式回挂到一个干净、可审计的文档包里。
+一个预处理增强层：在主解析器运行**之前**从 DOCX 中回收嵌入的 OLE 附件（XLSX / PDF / DOCX / PPT），再把它们以行内链接的形式回挂到一个干净、可审计的文档包里。同时提供深度 XLSX 工作簿解析：公式保留、子表拆分、资产提取、中英文自适应 Markdown 输出。
 
 > English: [README.md](README.md)
 
@@ -34,6 +34,39 @@ EDP 只补这一块短板。它是一个**资源层**，不是又一个解析器
 - **浅 preview**：白名单类型生成预览——`txt` / `csv` → 文本块；`xlsx` → 按 sheet 的 markdown 表格 + 带类型的 `preview.json`；Word 图表 / SmartArt → OOXML 文本/数据浅预览。PDF / DOCX / PPTX / 未知二进制只保留并链接，不生成 preview。
 - **回挂**：在 `content.md` 的原始锚点位置插入行内 markdown 链接。
 - **产出**：自包含、可审计的文档包 `{doc_id}/{raw,structured,manifest.json}`。
+
+## 独立 XLSX 解析
+
+EDP 也可以直接解析 XLSX 工作簿——不仅是嵌入 DOCX 的那些。这适用于：
+
+- 提取结构化表数据及完整单元格元数据（公式、超链接、批注）
+- 通过表头检测将多表工作表拆分为独立子表
+- 从工作簿中提取嵌入的图表、图片和 OLE 对象
+- 生成中英文自适应的 Markdown 预览
+
+```python
+from edp.xlsx.parser import parse_xlsx_package
+
+package = parse_xlsx_package("report.xlsx", "output/", "workbook_01")
+# → output/content.md     — 所有表格的 Markdown 预览
+# → output/tables/        — 每个子表的 table_001.csv + table_001.json
+# → output/assets/        — 提取的图片、图表、嵌入对象
+# → output/workbook.json  — 工作簿级元数据
+```
+
+### 核心能力
+
+| 功能 | 说明 |
+| ---- | ---- |
+| 双工作簿加载 | 同时捕获公式（``data_only=False``）**和**计算结果（``data_only=True``） |
+| 子表拆分 | 通过重复表头、空行间隙、图片锚点检测边界 |
+| 单元格元数据 | 公式文本、超链接目标、批注文字、数字格式、数据类型 |
+| 资产提取 | 图片、图表（含标题/系列）、OLE 对象、OMML 公式 |
+| Logo 识别 | 文件名 + 尺寸启发式跳过小型装饰图 |
+| 语言自适应输出 | 根据内容语言自动切换中/英文标签 |
+| 框架侧车 | 可选的 ``unstructured`` xlsx 解析器对比 |
+
+详见 [docs/xlsx-parsing-guide.md](docs/xlsx-parsing-guide.md)。
 
 ---
 
@@ -143,6 +176,7 @@ uv run edp batch input_docs output/packages --main-parser markitdown --unsafe-un
 
 - **[INSIGHTS.zh-CN.md](INSIGHTS.zh-CN.md)** — 简洁 14×23 记分板、TL DR 和 parser 选型指南。
 - **[docs/DESIGN.md](docs/DESIGN.md)** — v1.0 技术设计（流水线、包结构、数据结构、评测体系、模块布局、路线图）。
+- **[docs/xlsx-parsing-guide.md](docs/xlsx-parsing-guide.md)** — XLSX 解析指南（策略、输出结构、资产提取、实例）。[English](docs/xlsx-parsing-guide.md)
 - **[docs/examples/converted-markdown/](docs/examples/converted-markdown/)** — 可直接在 GitHub 阅读的精选转换后 Markdown。
 - **各框架调研笔记**（中文）：[RAGFlow](docs/ragflow-docx-parsing-research.md) · [Dify](docs/dify-docx-parsing-research.md) · [WeKnora](docs/weknora-docx-parsing-research.md) · [MinerU backend](docs/mineru-backend-evaluation.md) · [评测报告](docs/docx-markdown-evaluation-report.md)
 

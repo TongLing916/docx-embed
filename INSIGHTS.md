@@ -35,6 +35,7 @@ Implemented but not currently populated by this fixture: `footnote_recall`, `foo
 
 - **Embedded objects:** EDP is the differentiator. Use `pipeline-*` for any DOCX that may contain embedded Excel, PDF, DOCX, PPTX, or Ole10Native payloads.
 - **Charts and SmartArt:** EDP extracts OOXML chart/diagram resources into `structured/resources/chart_*` and `structured/resources/diagram_*`, then links previews from `content.md`.
+- **XLSX parsing:** EDP now provides deep XLSX workbook parsing as a standalone capability — dual-workbook formula/value loading, sub-table splitting, chart/image/OLE extraction, and language-aware Markdown output. See [docs/xlsx-parsing-guide.md](docs/xlsx-parsing-guide.md).
 - **Nested tables:** Pandoc is the only method in this fixture that restores the sampled nested table structure.
 - **Long tables:** A separate 326-row cross-page table case shows Docling and Pandoc recover sampled cell text best; MinerU drops the body of that table.
 - **RAG use:** High structural fidelity is not always embedding-friendly. Strip noisy Markdown/HTML/LaTeX in a downstream chunking step when building vector indexes.

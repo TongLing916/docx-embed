@@ -1,6 +1,6 @@
 # Embedded Document Parser (EDP)
 
-A pre-processing layer that recovers embedded OLE attachments (XLSX / PDF / DOCX / PPT) from DOCX **before** your main parser runs — then reattaches them as inline links in a clean, auditable document package.
+A pre-processing layer that recovers embedded OLE attachments (XLSX / PDF / DOCX / PPT) from DOCX **before** your main parser runs — then reattaches them as inline links in a clean, auditable document package. Also provides deep XLSX workbook parsing with formula preservation, sub-table splitting, asset extraction, and language-aware Markdown output.
 
 > 中文版：[README.zh-CN.md](README.zh-CN.md)
 
@@ -34,6 +34,39 @@ Embedded attachments are the isolated, decisive gap EDP closes. Newer dimensions
 - **Previews** allowlisted types: `txt` / `csv` → fenced text; `xlsx` → sheet-by-sheet markdown table + typed `preview.json`; Word charts / SmartArt → shallow OOXML text/data previews. PDF / DOCX / PPTX / unknown binaries are preserved and linked, not previewed.
 - **Reattaches** each resource as an inline markdown link at its original anchor position in `content.md`.
 - **Emits** a self-contained, auditable package: `{doc_id}/{raw,structured,manifest.json}`.
+
+## Standalone XLSX parsing
+
+EDP can also parse XLSX workbooks directly — not just those embedded in DOCX. This is useful for:
+
+- Extracting structured table data with full cell metadata (formulas, hyperlinks, comments)
+- Splitting multi-table worksheets into separate sub-tables via header detection
+- Extracting embedded charts, images, and OLE objects from workbooks
+- Generating language-aware Markdown previews (English / Chinese)
+
+```python
+from edp.xlsx.parser import parse_xlsx_package
+
+package = parse_xlsx_package("report.xlsx", "output/", "workbook_01")
+# → output/content.md     — Markdown preview of all tables
+# → output/tables/        — table_001.csv + table_001.json per sub-table
+# → output/assets/        — extracted images, charts, equations
+# → output/workbook.json  — workbook-level metadata
+```
+
+### Key capabilities
+
+| Feature | Description |
+| ------- | ----------- |
+| Dual-workbook loading | Captures formulas (``data_only=False``) **and** computed values (``data_only=True``) |
+| Sub-table splitting | Detects boundaries via repeated headers, blank-row gaps, image anchors |
+| Cell metadata | Formula text, hyperlink target, comment text, number format, data type |
+| Asset extraction | Images, charts (with title/series), OLE objects, OMML equations |
+| Logo detection | Filename + dimension heuristics skip small decorative images |
+| Language-aware output | Chinese/English label switching based on content language |
+| Framework sidecars | Optional ``unstructured`` xlsx partitioner comparison |
+
+See [docs/xlsx-parsing-guide.md](docs/xlsx-parsing-guide.md) for the full guide with examples.
 
 ---
 
@@ -143,6 +176,7 @@ Full decision matrix and per-framework trade-offs: [INSIGHTS.md](INSIGHTS.md).
 
 - **[INSIGHTS.md](INSIGHTS.md)** — concise 14×23 scoreboard, TL DR, and parser selection guide.
 - **[docs/DESIGN.md](docs/DESIGN.md)** — v1.0 technical design (pipeline, package structure, data structures, evaluation system, module layout, roadmap).
+- **[docs/xlsx-parsing-guide.md](docs/xlsx-parsing-guide.md)** — XLSX parsing guide (strategy, output structure, asset extraction, real-world examples). [中文版](docs/xlsx-parsing-guide.zh-CN.md)
 - **[docs/examples/converted-markdown/](docs/examples/converted-markdown/)** — curated converted Markdown files for direct reading on GitHub.
 - **Per-framework research notes** (Chinese): [RAGFlow](docs/ragflow-docx-parsing-research.md) · [Dify](docs/dify-docx-parsing-research.md) · [WeKnora](docs/weknora-docx-parsing-research.md) · [MinerU backend](docs/mineru-backend-evaluation.md) · [evaluation report](docs/docx-markdown-evaluation-report.md)
 

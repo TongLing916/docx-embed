@@ -345,3 +345,56 @@ def test_empty_workbook_warns(tmp_path: Path) -> None:
     package = parse_xlsx_package(workbook_path, tmp_path / "pkg", "empty_01")
     assert len(package.tables) == 0
     assert any("non-empty sheets" in w for w in package.warnings)
+
+
+def test_demo_workbook_parses_all_sheets(demo_xlsx_path: Path, tmp_path: Path) -> None:
+    """The pre-built demo workbook produces tables for visible sheets + metadata."""
+
+    package = parse_xlsx_package(demo_xlsx_path, tmp_path / "pkg", "demo")
+
+    # At least 3 tables (Sales Summary + Inventory + Data Types, _Config is hidden).
+    assert len(package.tables) >= 3
+
+    sheet_names = {t.sheet_name for t in package.tables}
+    assert "Sales Summary" in sheet_names
+    assert "Inventory" in sheet_names
+    assert "Data Types" in sheet_names
+
+    # Metadata
+    meta = json.loads((package.package_dir / "workbook.json").read_text(encoding="utf-8"))
+    assert meta["sheet_count"] == 4
+    assert meta["sheets"][2]["state"] == "hidden"  # _Config sheet
+
+    # Sales summary table has formulas
+    sales_table = next(
+        t for t in package.tables if t.sheet_name == "Sales Summary"
+    )
+    sales_json = json.loads(sales_table.json_path.read_text(encoding="utf-8"))
+    # Annual Total column (F) should have formula cells
+    formula_cells = {
+        coord: c
+        for coord, c in sales_json.get("cells", {}).items()
+        if "formula" in c
+    }
+    assert len(formula_cells) >= 5  # 5 region rows + 1 total row
+
+    # Chart was extracted
+    assert len(sales_json.get("assets", {}).get("charts", [])) >= 1
+
+    # Inventory has a merged note cell
+    inv_table = next(
+        t for t in package.tables if t.sheet_name == "Inventory"
+    )
+    inv_json = json.loads(inv_table.json_path.read_text(encoding="utf-8"))
+    stock_value_cells = {
+        coord: c
+        for coord, c in inv_json.get("cells", {}).items()
+        if "formula" in c
+    }
+    assert len(stock_value_cells) >= 8  # Stock Value = D × E for 8 rows
+
+    # Content Markdown is readable
+    content = package.content_path.read_text(encoding="utf-8")
+    assert "# Embedded Workbook demo" in content
+    assert "Sales Summary" in content
+    assert "Inventory" in content

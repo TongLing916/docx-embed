@@ -1,5 +1,7 @@
 # XLSX Parsing Guide
 
+> 中文版：[XLSX 解析指南](xlsx-parsing-guide.zh-CN.md)
+
 The `docx-embed` project provides deep XLSX workbook parsing that goes beyond
 simple cell-value extraction. This guide covers the parsing strategy, output
 structure, asset extraction, and best practices learned from real-world

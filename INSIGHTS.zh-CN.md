@@ -35,6 +35,7 @@
 
 - **嵌入对象：** EDP 是决定性差异。任何可能含 Excel、PDF、DOCX、PPTX、Ole10Native 的 DOCX 都应使用 `pipeline-*`。
 - **图表与 SmartArt：** EDP 会抽取 OOXML chart/diagram 资源到 `structured/resources/chart_*` 与 `structured/resources/diagram_*`，并从 `content.md` 链接预览。
+- **XLSX 解析：** EDP 现在提供独立的深度 XLSX 工作簿解析——双工作簿公式/值加载、子表拆分、图表/图片/OLE 提取、中英文自适应 Markdown 输出。详见 [docs/xlsx-parsing-guide.md](docs/xlsx-parsing-guide.md)。
 - **嵌套表：** 本 fixture 中只有 Pandoc 还原了抽样嵌套表结构。
 - **长表：** 另一个 326 行跨页表个案显示 Docling 和 Pandoc 的抽样单元格文本最好；MinerU 会漏掉该表正文。
 - **RAG 使用：** 高结构保真不等于 embedding 友好。做向量库时，应在下游 chunking 步骤清理 Markdown/HTML/LaTeX 噪声。
